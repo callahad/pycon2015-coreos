@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/coreos/coreos-vagrant
+	branch = master
+	commit = b8d09fa53d14b388f5552237c63b08647b8a0fbb
+	parent = none
+	cmdver = 0.2.1
