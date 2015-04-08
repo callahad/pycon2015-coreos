@@ -1,0 +1,250 @@
+[ 6:00 ] INTRODUCTION
+
+Lots of interest in containers
+	2 years since Docker
+	Not a talk about Docker -- one of those tomorrow
+	Impact on the rest of the stack
+
+Looking at CoreOS
+	Completely Open Source Linux distro
+		Bottom-up rethink of what Linux should look like for containers
+	Not because
+		You need a special distro -- you don't
+		I think it will necessarily win -- it might not
+	Doing stuff that will be considered best practices in 3-5 years
+
+Caveat: I'm a hobbyist
+	No real production experience with this stuff
+	Looking more at the theory / design decisions
+		Fun to learn new ways to solve old problems
+		If it is the future, we should be familiar w/ patterns + building blocks
+			Akin to rise of virtualization 10 years ago
+
+What I want in a server
+	Low maintenance, Reliable, Resilient
+		Stays up to date
+		Without breaking my apps
+		Survive a server going offline
+	Could cobble together approximation
+		Complex, untrustworthy
+		Easier to just not touch it
+	Declarative would be a huge win
+		"I want 3 of these running."
+	This requires inventing new technology
+		Well, Google had a bunch of it internally
+		But now you can download Google's secret sauce
+
+CoreOS Components
+	System updates (FastPatch)
+	Isolate applications (Containers: Docker / Rkt)
+	Clustering (Consensus: etcd)
+	Distribute tasks (Scheduling: fleet)
+
+----------------------------------------
+
+[ 3:30 ] SYSTEM UPDATES (FastPatch)
+
+Staying up to date is key to good security
+	Gap between disclosure and widespread exploitation
+
+Similar to browsers
+	Has browser style release channels: Alpha -> Beta -> Stable
+	Opportunistically downloading updates
+	Running new version after restart
+
+Whole-system updates
+	Entire OS gets updated at once, rather than package by package
+	Two boot partitions
+		Borrowed from Chrome OS
+		Active / Passive
+		Active is read only -- can't mess up base system
+		Updates downloaded, signatures checked, applied to passive parition, reboot
+
+Benefits
+	Atomic -- all or nothing update
+	Rollback -- can boot into the previous, known-good partition
+
+----------------------------------------
+
+[ 6:00 + Demos ] CONSENSUS (etcd)
+
+Problem: My server is rebooting all the time! How do I keep my app up?
+	I thought you said you were a hobbyist?
+	A few minutes of downtime every few weeks is probably OK
+	Naïve: Run it on another server, too.
+
+Can you see the new problem?
+	Nothing to stop both servers from rebooting at the same time
+
+Need global state
+	Introduce a key/value store, etcd
+		Centralized place to store metadata about the cluster
+	Build locksmith on top of that
+		Implement a semaphore that servers have to acquire before rebooting
+		Release upon coming back online
+		Increasing size of semaphore lets you control rate of reboots
+	Nice property: If a server doesn't come back up, you don't see cascades
+
+DEMO: Locksmith
+	> FIXME!
+	> Show CURL options
+
+Does this solve it?
+	Nope! The etcd server might reboot!
+
+Need to distribute this centralized data store
+	etcd is distributed
+	Implementation of the system described in Google's Chubby paper
+	Uses Raft, not Paxos
+		Equivalent in fault-tolerance and performance, but better decomposed
+	English: Things will keep working as long as majority of etcd boxes are up
+
+Deployment architectures
+	> FIXME
+
+etcd is a well designed, independent component
+	Kubernetes by Google
+	Vulcan by Mailgun
+	Pivotal CloudFoundry
+
+----------------------------------------
+
+[ 4:00 + Demos ] CONTAINERIZATION (Docker / rkt)
+
+Whole system updates are possible because the system is extremely bare-bones
+	Entire partition is ~140 MB compressed
+	No Python, Perl, or Ruby. No Node.js.
+	No package manager or compiler
+
+So how are you supposed to run anything?
+	Containers!
+
+What's a container?
+	Somewhere between a lightweight VM and a heavyweight chroot
+		Bring your own root filesystem
+		Host provides the kernel and isolation
+		Very low overhead; no emulated hardware
+	Not a new idea
+		FreeBSD Jails (1998)
+	Why the sudden popularity?
+		Mainline kernel support via cgroups
+		Docker
+			Consistent, high level UI
+			Serializable container format
+
+Demo: Containers
+	> FIXME!
+
+----------------------------------------
+
+[ 7:00 + Demo ] SCHEDULING (Fleet)
+
+Goal: Do as little work as possible
+	Missing piece, declarative way to say "run X of these"
+	Robust against unexpected failures
+
+Single machine world: supervisord, upstart, systemd
+	Still need that, but also need something higher level
+		We're dealing with clusters
+	Need a scheduler -- system to distribute tasks amongst the cluster
+		Need to keep track of global cluster state... etcd!
+	Just like locksmith, we're again building things on top of etcd
+		Common pattern
+		It's not any scheduling software that gives you HA -- it's consensus
+
+Kubernetes does this
+	Google open source project
+	Very complex, dozens of full time engineers
+	Part of CoreOS commercial offering, Tectonic
+	If you need it, you know it
+
+Fleet is for the rest of us
+	Bundled with CoreOS
+	Much more basic / fundamental
+	Good enough for most uses
+
+Fleet is a clustered interface for systemd
+	So you write systemd unit files
+	Unit files look like this
+		> FIXME!
+	Add in Fleet-specific qualifier
+		Schedule on the same machine as another unit
+		Don't schedule on the same machine as another unit
+		Schedule on every machine
+		Only schedule on machines that have some sort of metadata attached
+
+DEMO: Load two units into Fleet and see what happens
+	> FIXME!
+
+Making this work takes special design considerations
+	If you want things to move around, the less state the better
+		Design principles from 12 Factor Apps
+		Think like building something on Heroku
+
+What about state? What about load balancing?
+	Isn't a great story for this, yet
+	That's OK -- you don't have to run your entire infrastructure on CoreOS
+		Many people outsource it: RDS / EBS / ELB
+		Bind your database and load balancer two specific hosts
+			Manage them a little more manually
+	Usually revving your workers way more than your database
+
+----------------------------------------
+
+[ 2:00 ] RECAP
+
+We've built what we wanted:
+	Self-updating operating system
+	Portable, isolated containers for our applications and their dependencies
+	Multiple servers joined into a coordinated cluster
+	Distribute jobs across the cluster
+
+Self-updating, self-organizing, and self-healing platform for our applications
+
+Next step is to play with it yourself -- lots of supported platforms
+	Local VMs using Vagrant
+	Azure, EC2, GCE, RackSpace, DigitalOcean
+	DigitalOcean $40 credit for new accounts: SAMMYLOVESPYCON
+		Run a 3 node cluster for 2.5 months
+
+----------------------------------------
+
+[ ? ] QUESTIONS AND ANSWERS
+
+----------------------------------------
+
+[ ?:?? ]  Demo
+	Dockerfile
+	docker run
+	docker save
+	docker load
+	docker run
+
+
+
+
+Goal: Improve fundamental security of the Internet
+Lots of security is just updating in a timely manner.
+(Evergreen browsers.)
+
+How do you do that for an OS?
+(Chromium OS solved it)
+Two root partitions, signed, read-only, automatic, atomic updates:
+http://www.chromium.org/chromium-os/chromiumos-design-docs/disk-format
+https://coreos.com/using-coreos/updates/
+https://coreos.com/blog/recoverable-system-upgrades/
+
+How do you ensure applications work after the upgrade?
+Containers! Applications carry all of their dependencies with them.
+(virtualenv)
+Implies portability -- you can copy them between machines.
+
+> SAMMYLOVESPYCON
+
+BULLETED LIST
+
+Deliver updates really quickly without disrupting things
+
+RHEL keeps updates for 10 years! https://access.redhat.com/support/policy/updates/errata/
+
+Still have to update your container base images
