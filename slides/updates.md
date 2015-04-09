@@ -36,8 +36,4 @@
 
 ***
 
-### Whole-system Updates
-
-Atomic
-
-Recoverable
+### Atomic, Recoverable Updates
