@@ -20,21 +20,19 @@
 
 ***
 
-<!-- .slide: data-background="#ffffff" data-transition="fade" -->
-
-![](i/os-update-1.png) <!-- .element: style="border: none; background: transparent; box-shadow: none;" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-1.svg" data-background-size="80%" -->
 
 ***
 
-<!-- .slide: data-background="#ffffff" data-background-transition="none" data-transition="fade" -->
-
-![](i/os-update-2.png) <!-- .element: style="border: none; background: transparent; box-shadow: none;" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-2.svg" data-background-size="80%" data-background-transition="none" -->
 
 ***
 
-<!-- .slide: data-background="#ffffff" data-transition="fade" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-3.svg" data-background-size="80%" data-background-transition="none" -->
 
-![](i/os-update-3.png) <!-- .element: style="border: none; background: transparent; box-shadow: none;" -->
+***
+
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-4.svg" data-background-size="80%" -->
 
 ***
 

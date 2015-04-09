@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="15cm" height="15cm" viewBox="41 70 286 285" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="181" cy="222" rx="107.5" ry="107.5"/>
+  <image x="42" y="145" width="91" height="91" xlink:href="file:///Users/dan/Projects/Speaking/PyCon-CoreOS/i/coreos-sphere.svg"/>
+  <image x="141.5" y="71.45" width="91" height="91" xlink:href="file:///Users/dan/Projects/Speaking/PyCon-CoreOS/i/coreos-sphere.svg"/>
+  <image x="234" y="153.9" width="91" height="91" xlink:href="file:///Users/dan/Projects/Speaking/PyCon-CoreOS/i/coreos-sphere.svg"/>
+  <image x="74.5" y="261.35" width="91" height="91" xlink:href="file:///Users/dan/Projects/Speaking/PyCon-CoreOS/i/coreos-sphere.svg"/>
+  <image x="201" y="262.8" width="91" height="91" xlink:href="file:///Users/dan/Projects/Speaking/PyCon-CoreOS/i/coreos-sphere.svg"/>
+</svg>
