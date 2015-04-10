@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/callahad/pyramid-hello-world
+	branch = master
+	commit = 2de9913e2c01937ed012dcea5c35b20b341de7c3
+	parent = d2540141e093059b3c9a52debdee3ed16b279b0b
+	cmdver = 0.2.1
