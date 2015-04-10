@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="style.css">
 
         <!-- Code syntax highlighting -->
-        <link rel="stylesheet" href="ext/reveal.js/lib/css/zenburn.css">
+        <link rel="stylesheet" href="railscasts.css">
 
         <!-- Printing and PDF exports -->
         <script>
@@ -67,7 +67,7 @@
                     { src: 'ext/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
                     { src: 'ext/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
                     { src: 'ext/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'ext/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'ext/reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return true; }, callback: function() { hljs.initHighlightingOnLoad(); } },
                 ]
             });
         </script>

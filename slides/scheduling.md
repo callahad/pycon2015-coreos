@@ -30,14 +30,31 @@ Clustered interface for systemd
 ***
 
 ### Systemd Unit Files
+```ini
+[Unit]
+Description=My App
+After=docker.service
+Requires=docker.service
 
-    FIXME: Add unit files
+[Service]
+ExecStartPre=-/usr/bin/docker kill my-app-%i
+ExecStartPre=-/usr/bin/docker rm my-app-%i
+ExecStart=/usr/bin/docker run -rm --name my-app-%i -p 80:8080 callahad/my-app
+ExecStop=/usr/bin/docker stop my-app-%i
+
+[X-Fleet]
+Conflicts=my-app@*.service
+```
 
 ***
 
-### Fleet attributes
+### X-Fleet attributes
 
-    FIXME: Add unit files
+- `Conflicts`
+- `MachineOf`
+- `MachineID`
+- `MachineMetadata`
+- `Global`
 
 ***
 
