@@ -22,23 +22,23 @@ Applied on next start                <!-- .element: class="fragment" -->
 
 ***
 
-<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-1.svg" data-background-size="80%" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-1.svg" data-background-size="60%" -->
 
 ***
 
-<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-2.svg" data-background-size="80%" data-background-transition="none" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-2.svg" data-background-size="60%" data-background-transition="none" -->
 
 ***
 
-<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-3.svg" data-background-size="80%" data-background-transition="none" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-3.svg" data-background-size="60%" data-background-transition="none" -->
 
 ***
 
-<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-4.svg" data-background-size="80%" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-4.svg" data-background-size="60%" -->
 
 ***
 
-<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-3.svg" data-background-size="80%" -->
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-3.svg" data-background-size="60%" -->
 
 ***
 

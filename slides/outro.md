@@ -43,4 +43,8 @@ dcallahan@mozilla.com
 
 @callahad
 
-Note: FIXME: Add link to notes
+github.com/callahad/pycon2015-coreos
+
+___
+
+"SAMMYLOVESPYCON"

@@ -4,11 +4,11 @@
 
 ---
 
-<!-- .slide: data-background-size="90%" data-background-image="i/vector_v-dark-trans.svg" -->
+<!-- .slide: data-background-size="80%" data-background-image="i/vector_v-dark-trans.svg" -->
 
 ***
 
-<!-- .slide: data-background-size="90%" data-background-image="i/vector_v-dark-trans-dim.svg" -->
+<!-- .slide: data-background-size="80%" data-background-image="i/vector_v-dark-trans-dim.svg" -->
 
 ## This is not a talk about Docker
 
@@ -22,11 +22,11 @@ And what containerization changes
 
 ***
 
-<!-- .slide: data-background-size="50%" data-background-image="i/coreos-wordmark-vert-color-white.svg" -->
+<!-- .slide: data-background-size="40%" data-background-image="i/coreos-wordmark-vert-color-white.svg" -->
 
 ***
 
-<!-- .slide: data-background-size="50%" data-background-image="i/coreos-wordmark-vert-color-transparent.svg" -->
+<!-- .slide: data-background-size="40%" data-background-image="i/coreos-wordmark-vert-color-transparent.svg" -->
 
 Linux distribution designed for containers
 
