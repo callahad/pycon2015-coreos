@@ -4,15 +4,17 @@
 
 ***
 
-## Staying up-to-date is key to good security
+## Staying up-to-date is <br> key to good security
 
 ***
 
 ### Browser-like Update Channels
 
-- Alpha → Beta → Stable
-- Opportunistically downloaded
-- Applied on next start
+Alpha → Beta → Stable
+
+Opportunistically downloaded         <!-- .element: class="fragment" -->
+
+Applied on next start                <!-- .element: class="fragment" -->
 
 ***
 
