@@ -1,0 +1,13 @@
+[Unit]
+Description=My App
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill my-app-%i
+ExecStartPre=-/usr/bin/docker rm my-app-%i
+ExecStart=/usr/bin/docker run --rm --name my-app-%i -p 80:8080 callahad/my-app
+ExecStop=/usr/bin/docker stop my-app-%i
+
+[X-Fleet]
+Conflicts=my-app@*.service
