@@ -47,9 +47,9 @@ Clustered interface for systemd
 
 ### Design Considerations
 
-Build "Twelve-Factor Apps"
-
 Minimize state
+
+Build "Twelve-Factor Apps"
 
 ***
 

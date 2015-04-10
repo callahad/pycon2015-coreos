@@ -67,7 +67,7 @@ Note: This is actually *really hard!* Think of the folks on old RHEL.
 ### Technology in CoreOS
 
 1. FastPatch (Updates)             <!-- .element: class="fragment" -->
-2. Docker / Rkt (Containers)       <!-- .element: class="fragment" -->
+2. Docker / rkt (Containers)       <!-- .element: class="fragment" -->
 3. Etcd (Consensus)                <!-- .element: class="fragment" -->
 4. Fleet / Kubernetes (Scheduling) <!-- .element: class="fragment" -->
 

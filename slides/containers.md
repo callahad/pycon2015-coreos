@@ -1,6 +1,6 @@
 # Containerization
 
-## (Docker / Rkt)
+## (Docker / rkt)
 
 ***
 

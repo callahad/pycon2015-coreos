@@ -36,4 +36,20 @@
 
 ***
 
-### Atomic, Recoverable Updates
+<!-- .slide: data-background-color="#ffffff" data-background-image="i/fastpatch-3.svg" data-background-size="80%" -->
+
+***
+
+![](i/servers-solo.svg)
+
+***
+
+> My server is rebooting on its own, <br> how do I keep my app online?
+
+***
+
+![](i/servers-duo.svg)
+
+***
+
+> Both my servers reboot at the same time, <br> how do I keep my app online?
