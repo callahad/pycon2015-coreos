@@ -26,6 +26,8 @@ No compiler
 
 <!-- .slide: data-background-size="90%" data-background-image="i/docker_rkt.svg" -->
 
+&nbsp;
+
 ***
 
 <!-- .slide: data-background-size="90%" data-background-image="i/docker_rkt-dim.svg" -->

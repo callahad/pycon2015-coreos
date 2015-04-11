@@ -24,6 +24,8 @@ And what containerization changes
 
 <!-- .slide: data-background-size="40%" data-background-image="i/coreos-wordmark-vert-color-white.svg" -->
 
+&nbsp;
+
 ***
 
 <!-- .slide: data-background-size="40%" data-background-image="i/coreos-wordmark-vert-color-transparent.svg" -->
